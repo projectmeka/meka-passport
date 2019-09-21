@@ -1,16 +1,12 @@
-# substrate-module-template
-
-This is a template for a Substrate runtime module which lives as its own crate so it can be imported into multiple other runtimes. It is based on the ["template" module](https://github.com/paritytech/substrate/blob/v1.0/node-template/runtime/src/template.rs) which is included with the [Substrate node template](https://github.com/paritytech/substrate/tree/v1.0/node-template).
-
-Check out the [HOWTO](HOWTO.md) to learn how to use this for your own runtime module.
-
-This README should act as a general template for distributing your module to others.
+# meka-passport
 
 ## Purpose
 
-This module acts as a template for building other runtime modules.
+Meka-passport is to bind the user's substrate based address and the social media account. It's a srml that based on substrate.
 
-It currently allows a user to put a `u32` value into storage, which triggers a runtime event.
+The name passport is from the passport.js which is a very popular authentication for Node.js. 
+
+Meka-passport is included in the [meka-node](https://github.com/projectmeka/meka-node) project.
 
 ## Dependencies
 
@@ -29,9 +25,9 @@ This module does not depend on any other SRML or externally developed modules.
 To add this module to your runtime, simply include the following to your runtime's `Cargo.toml` file:
 
 ```rust
-[dependencies.substrate-module-template]
+[dependencies.meka-passport]
 default_features = false
-git = 'https://github.com/shawntabrizi/substrate-module-template.git'
+git = 'https://github.com/projectmeka/meka-passport'
 ```
 
 and update your runtime's `std` feature to include this module:
@@ -39,7 +35,7 @@ and update your runtime's `std` feature to include this module:
 ```rust
 std = [
     ...
-    'example_module/std',
+    'meka-passport/std',
 ]
 ```
 
@@ -49,7 +45,7 @@ You should implement it's trait like so:
 
 ```rust
 /// Used for the module test_module
-impl substrate_module_template::Trait for Runtime {
+impl meka_passport::Trait for Runtime {
 	type Event = Event;
 }
 ```
@@ -57,7 +53,7 @@ impl substrate_module_template::Trait for Runtime {
 and include it in your `construct_runtime!` macro:
 
 ```rust
-ExampleModule: substrate_module_template::{Module, Call, Storage, Event<T>},
+ExampleModule: meka_passport::{Module, Call, Storage, Event<T>},
 ```
 
 ### Genesis Configuration
