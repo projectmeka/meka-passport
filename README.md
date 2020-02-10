@@ -8,6 +8,18 @@ The name passport is from the passport.js which is a very popular authentication
 
 Meka-passport is included in the [meka-node](https://github.com/projectmeka/meka-node) project.
 
+
+## Structure
+
+### module
+* BindSocial(platform: String, socialAccount: String , account: AccountId) 
+
+### storage
+* BindedRelation(platform, String, socialAccount: String , account: AccountId)
+
+### events
+* SocialBinded(platform: String, socialAccount: String , account: AccountId) 
+
 ## Dependencies
 
 ### Traits
